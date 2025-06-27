@@ -1,0 +1,32 @@
+2025-06-27 22:38:28,461 - __main__ - INFO - Starting duplicate callback test...
+2025-06-27 22:38:28,461 - __main__ - INFO - Testing refresh callbacks...
+2025-06-27 22:38:29,179 - __main__ - INFO - Creating minimal Dash app...
+2025-06-27 22:38:29,194 - __main__ - INFO - Registering refresh callbacks...
+2025-06-27 22:38:29,194 - components.refresh_controls - INFO - Registering refresh callbacks with ID: refresh_controls_1751063909
+2025-06-27 22:38:29,197 - __main__ - ERROR - Error in test_refresh_callbacks: allow_duplicate requires prevent_initial_call to be True. The order of the call is not guaranteed to be the same on every page load. To enable duplicate callback with initial call, set prevent_initial_call='initial_duplicate'  or globally in the config prevent_initial_callbacks='initial_duplicate'
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\test_duplicate_callbacks.py", line 37, in test_refresh_callbacks
+    register_refresh_callbacks(app)
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\components\refresh_controls.py", line 300, in register_refresh_callbacks
+    @app.callback(
+     ^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\dash.py", line 1184, in callback
+    return _callback.callback(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_callback.py", line 179, in callback
+    return register_callback(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_callback.py", line 291, in register_callback
+    callback_id = insert_callback(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_callback.py", line 231, in insert_callback
+    _validate.validate_duplicate_output(
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_validate.py", line 552, in validate_duplicate_output
+    _valid(output)
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_validate.py", line 539, in _valid
+    raise exceptions.DuplicateCallback(
+dash.exceptions.DuplicateCallback: allow_duplicate requires prevent_initial_call to be True. The order of the call is not guaranteed to be the same on every page load. To enable duplicate callback with initial call, set prevent_initial_call='initial_duplicate'  or globally in the config prevent_initial_callbacks='initial_duplicate'
+
+2025-06-27 22:38:29,232 - __main__ - INFO - Test complete.

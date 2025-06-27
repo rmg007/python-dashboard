@@ -1,0 +1,59 @@
+﻿python : INFO:app:Starting 
+application
+At line:1 char:49
++ ... 
+ystem.Text.Encoding]::UTF8; 
+python -u test_app_import.py 
+2>&1 | Out-F ...
++                            
+     ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (INFO:ap  
+  p:Starting application:S   
+ tring) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+INFO:app:Scheduled jobs are 
+disabled 
+(ENABLE_SCHEDULED_JOBS=False)
+Traceback (most recent call 
+last):
+Python version: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+Working directory: C:\Users\mhali\OneDrive\Documents\python-dashboard
+Project root: C:\Users\mhali\OneDrive\Documents\python-dashboard
+
+Python path:
+1. C:\Users\mhali\OneDrive\Documents\python-dashboard
+2. C:\Users\mhali\OneDrive\Documents\python-dashboard
+3. C:\Python312\python312.zip
+4. C:\Python312\DLLs
+5. C:\Python312\Lib
+6. C:\Python312
+7. C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv
+8. C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages
+
+Trying to import app...
+Database is up to date
+
+[ERROR] Import error: cannot import name 'db' from 'db.connection' (C:\Users\mhali\OneDrive\Documents\python-dashboard\db\connection.py)
+
+Traceback:
+  File "C:\Users\mhali\OneDri
+ve\Documents\python-dashboard
+\test_app_import.py", line 
+36, in main
+    import app
+  File "C:\Users\mhali\OneDri
+ve\Documents\python-dashboard
+\app.py", line 113, in 
+<module>
+    from db.connection 
+import db
+ImportError: cannot import 
+name 'db' from 
+'db.connection' (C:\Users\mha
+li\OneDrive\Documents\python-
+dashboard\db\connection.py)

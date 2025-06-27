@@ -1,0 +1,37 @@
+2025-06-27 22:28:17,872 - __main__ - INFO - Logging to C:\Users\mhali\OneDrive\Documents\python-dashboard\test_callbacks.log
+2025-06-27 22:28:18,675 - __main__ - INFO - Testing callback: KPI Callbacks
+2025-06-27 22:28:18,695 - __main__ - INFO - Successfully registered callback: KPI Callbacks
+2025-06-27 22:28:18,696 - __main__ - INFO - Testing callback: Visual Callbacks
+2025-06-27 22:28:18,701 - __main__ - INFO - Successfully registered callback: Visual Callbacks
+2025-06-27 22:28:18,702 - __main__ - INFO - Testing callback: Layout Callbacks
+2025-06-27 22:28:18,706 - __main__ - INFO - Successfully registered callback: Layout Callbacks
+2025-06-27 22:28:18,707 - __main__ - INFO - Testing callback: Export Callbacks
+2025-06-27 22:28:18,712 - __main__ - INFO - Successfully registered callback: Export Callbacks
+2025-06-27 22:28:18,712 - __main__ - INFO - Testing callback: Refresh Callbacks
+2025-06-27 22:28:18,717 - __main__ - ERROR - Error registering callback Refresh Callbacks: allow_duplicate requires prevent_initial_call to be True. The order of the call is not guaranteed to be the same on every page load. To enable duplicate callback with initial call, set prevent_initial_call='initial_duplicate'  or globally in the config prevent_initial_callbacks='initial_duplicate'
+Traceback (most recent call last):
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\test_callbacks.py", line 35, in test_callback_registration
+    callback_func(app)
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\test_callbacks.py", line 58, in <lambda>
+    (lambda app: register_refresh_callbacks(app), "Refresh Callbacks"),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\components\refresh_controls.py", line 279, in register_refresh_callbacks
+    @app.callback(
+     ^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\dash.py", line 1184, in callback
+    return _callback.callback(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_callback.py", line 179, in callback
+    return register_callback(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_callback.py", line 291, in register_callback
+    callback_id = insert_callback(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_callback.py", line 231, in insert_callback
+    _validate.validate_duplicate_output(
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_validate.py", line 552, in validate_duplicate_output
+    _valid(output)
+  File "C:\Users\mhali\OneDrive\Documents\python-dashboard\.venv\Lib\site-packages\dash\_validate.py", line 539, in _valid
+    raise exceptions.DuplicateCallback(
+dash.exceptions.DuplicateCallback: allow_duplicate requires prevent_initial_call to be True. The order of the call is not guaranteed to be the same on every page load. To enable duplicate callback with initial call, set prevent_initial_call='initial_duplicate'  or globally in the config prevent_initial_callbacks='initial_duplicate'
+2025-06-27 22:28:18,720 - __main__ - ERROR - Failed to register callback: Refresh Callbacks
